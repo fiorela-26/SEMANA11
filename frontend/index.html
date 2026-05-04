@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darwin Sys - Panel de Supervisión</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Darwin Sys</span>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-section">Operaciones</li>
+            <li class="menu-item active" onclick="cargarModulo('detalle_registro')">
+                <i class="fa-solid fa-clipboard-check"></i> Supervisión
+            </li>
+            <li class="menu-section">Configuración de Acciones</li>
+            <li class="menu-item" onclick="cargarModulo('accion')"><i class="fa-solid fa-bolt"></i> Acciones</li>
+            <li class="menu-item" onclick="cargarModulo('accion_especifica')"><i class="fa-solid fa-layer-group"></i> Acc. Específicas</li>
+            <li class="menu-item" onclick="cargarModulo('actividad')"><i class="fa-solid fa-person-running"></i> Actividades</li>
+            <li class="menu-item" onclick="cargarModulo('subaccion')"><i class="fa-solid fa-sitemap"></i> Subacciones</li>
+            <li class="menu-section">Agentes y Logística</li>
+            <li class="menu-item" onclick="cargarModulo('tipo_agente')"><i class="fa-solid fa-user-tie"></i> Tipos de Agente</li>
+            <li class="menu-item" onclick="cargarModulo('tipo_transporte')"><i class="fa-solid fa-car"></i> Transporte</li>
+            <li class="menu-section">Ubicaciones</li>
+            <li class="menu-item" onclick="cargarModulo('zona_distrito')"><i class="fa-solid fa-map-location-dot"></i> Distritos</li>
+            <li class="menu-item" onclick="cargarModulo('zona_provincia')"><i class="fa-solid fa-map"></i> Provincias</li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="header-info">
+                <h1 id="titulo-modulo">Supervisión</h1>
+                <p id="descripcion-modulo">Gestión de registros db_darwin</p>
+            </div>
+            <button class="btn-nuevo" onclick="abrirFormulario()">
+                <i class="fa-solid fa-plus"></i> Nuevo Registro
+            </button>
+        </header>
+        <section id="app-root" class="content-card"></section>
+    </main>
+
+    <div id="modal-formulario" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h2 id="modal-titulo">Nuevo Registro</h2>
+            <form id="form-dinamico">
+                <div id="inputs-container"></div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+                    <button type="submit" class="btn-guardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

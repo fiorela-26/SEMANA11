@@ -1,0 +1,14 @@
+:root { --primary: #2563eb; --dark: #0f172a; --bg: #f8fafc; }
+body { font-family: sans-serif; background: var(--bg); display: flex; margin: 0; height: 100vh; }
+.sidebar { width: 260px; background: var(--dark); color: white; padding: 20px 0; }
+.menu-item { padding: 12px 20px; cursor: pointer; color: #cbd5e1; }
+.menu-item.active { background: #1e293b; color: var(--primary); border-left: 4px solid var(--primary); }
+.main-content { flex: 1; overflow-y: auto; }
+.top-bar { background: white; padding: 20px 40px; display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; }
+.content-card { margin: 20px; background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.tabla-dinamica { width: 100%; border-collapse: collapse; }
+.tabla-dinamica th, td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+.btn-nuevo { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+.btn-delete { color: #ef4444; background: none; border: none; cursor: pointer; }
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+.modal-content { background: white; padding: 30px; border-radius: 8px; width: 400px; }
